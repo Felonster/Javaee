@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid>
+                <h:outputLabel value="imie"/>
+                <h:inputText value="${powitanieBean.imie}" required="true"/>
+                
+                <h:outputLabel value="nazwisko"/>
+                <h:inputText value="${powitanieBean.nazwisko}" required="true"/>
+                
+            </h:panelGrid>
+            
+            <h:commandButton value="Przejdz do powitania" action="#{powitanieBean.przejdzDoPowitania}"/>
+        </h:form>
+    </h:body>
+</html>
