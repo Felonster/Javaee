@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Lista Osób - JSF</title>
+        <meta charset="UTF-8" />
+    </h:head>
+
+    <h:body>
+        <h2>Dodaj nową osobę:</h2>
+
+        <!-- Formularz do dodania osoby -->
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Imię:" />
+                <h:inputText value="#{osobaBean.imie}" required="true" />
+
+                <h:outputLabel value="Adres:" />
+                <h:inputText value="#{osobaBean.adres}" required="true" />
+
+                <h:outputLabel value="Telefon:" />
+                <h:inputText value="#{osobaBean.telefon}" required="true" />
+            </h:panelGrid>
+
+            <h:commandButton value="Dodaj osobę" action="#{osobaBean.dodajOsobe}" />
+        </h:form>
+        
+        <h2>Lista osób:</h2>
+        <!-- Tabela wyświetlająca osoby -->
+        <h:dataTable value="#{osobaBean.listaOsob}" var="osoba">
+            <h:column>
+                <f:facet name="header">Imię</f:facet>
+                #{osoba.imie}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Adres</f:facet>
+                #{osoba.adres}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Telefon</f:facet>
+                #{osoba.telefon}
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
