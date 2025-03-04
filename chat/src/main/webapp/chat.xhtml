@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Wszystkie informacje</title>
+</h:head>
+<h:body>
+    <h1>Lista zapisanych informacji</h1>
+
+    <h:dataTable value="#{chatBean.listaInformacji}" var="info">
+        <h:column>
+            <h:outputText value="#{info}" />
+        </h:column>
+    </h:dataTable>
+
+    <br/>
+    <h:link value="Wróć do dodawania informacji" outcome="index.xhtml"/>
+</h:body>
+</html>
